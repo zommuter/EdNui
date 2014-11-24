@@ -11,24 +11,10 @@ While Excel 2013 finally [solved](http://blogs.office.com/2013/02/07/open-excel-
 * First of all, start Excel and hit <kbd>Alt</kbd>+<kbd>F11</kbd> to open the VBA editor
 * Right-click the `VBAProject (PERSONAL.XLSB)` and insert a module if none already exists. Give it a more sensible name than `Module1` while you're at it
 * Double-click that module and paste the following code:  
-  ```vbnet
-    Sub OpenInNewInstance()
-        ' http://superuser.com/a/277794/35237
-        Dim objXLNewApp As Excel.Application
-        Dim doc As String
-
-        doc = ActiveWorkbook.FullName
-        ActiveWorkbook.Close True
-
-        Set objXLNewApp = CreateObject("Excel.Application")
-
-        objXLNewApp.Workbooks.Open doc
-        objXLNewApp.Visible = True
-    End Sub
-  ```
+  {% gist zommuter/2496054320979c3740a2 %}
 * Close the VBA-Editor after saving, but leave Excel open
 * Right-click the quick access bar and choose to modify the same
 * In the middle drop-down menu, select Macros and double-click `PERSONAL.XLSB!OpenInNewInstance`
-* Click on the added entry in the rightmost list and modify the name to e.g. "Open in new Window" and pick an icon such as ![this one]({{ site.url }}/images/multiwin.png) for it.
+* Click on the added entry in the rightmost list and modify the name to e.g. "Open in new Window" and pick an icon such as ![this one]({{ site.baseurl }}/images/multiwin.png) for it.
 
 Done. You now have a neat icon in your quick bar with which you can put the currently opened sheet into a separate window. The only down-side of this is that some of the DDE-functions for advanced copy-pasting fail.
