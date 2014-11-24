@@ -5,9 +5,9 @@ relative_permalinks: true
 # Setup
 title:            EdNui
 tagline:          Everday Nuisances
-url:              http://getpoole.com
+url:              https://zommuter.github.io
 paginate:         1
-baseurl:          https://zommuter.github.io/EdNui/
+baseurl:          /EdNui/
 author:
   name:           Tobias Kienzler
   url:            https://zommuter.github.io
@@ -16,4 +16,4 @@ author:
 # Custom vars
 version:          1.0.0
 github:
-  repo:           https://github.com/zommuter/EdNui
+  repo:           https://github.com/zommuter/EdNui.git
